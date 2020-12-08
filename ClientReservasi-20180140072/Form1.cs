@@ -16,5 +16,10 @@ namespace ClientReservasi_20180140072
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

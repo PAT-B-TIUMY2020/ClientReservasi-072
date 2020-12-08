@@ -43,6 +43,10 @@ namespace ClientReservasi_20180140072
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -50,45 +54,46 @@ namespace ClientReservasi_20180140072
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(34, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "ID Reservasi";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(34, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.Size = new System.Drawing.Size(45, 17);
             this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label2.Text = "Nama";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(34, 171);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
+            this.label3.Size = new System.Drawing.Size(70, 17);
             this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.label3.Text = "No Telfon";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(34, 225);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
+            this.label4.Size = new System.Drawing.Size(132, 17);
             this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.label4.Text = "Jumlah Pemesanan";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(34, 281);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.Size = new System.Drawing.Size(66, 17);
             this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
+            this.label5.Text = "ID Lokasi";
             // 
             // button1
             // 
@@ -96,7 +101,7 @@ namespace ClientReservasi_20180140072
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
+            this.button1.Text = "Simpan";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -105,7 +110,7 @@ namespace ClientReservasi_20180140072
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
+            this.button2.Text = "Update";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -114,7 +119,7 @@ namespace ClientReservasi_20180140072
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 7;
-            this.button3.Text = "button3";
+            this.button3.Text = "Hapus";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -123,7 +128,7 @@ namespace ClientReservasi_20180140072
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 8;
-            this.button4.Text = "button4";
+            this.button4.Text = "Cleare";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // textBox1
@@ -161,11 +166,27 @@ namespace ClientReservasi_20180140072
             this.textBox5.Size = new System.Drawing.Size(384, 22);
             this.textBox5.TabIndex = 13;
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(186, 316);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(463, 150);
+            this.dataGridView1.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -182,6 +203,8 @@ namespace ClientReservasi_20180140072
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +226,8 @@ namespace ClientReservasi_20180140072
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
